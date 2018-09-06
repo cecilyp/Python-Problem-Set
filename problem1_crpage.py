@@ -1,20 +1,34 @@
 # STAT/CS 287
 # HW 01
+# Problem1
 #
-# Name: <FILL ME IN>
-# Date: <FILL ME IN>
+# Name: Cecily Page
+# Date: September 6th 2018
 
 
-def similarity(A,B):
-    '''
+def similarity(a: set, b: set):
+    """
+    Calculates the similarity by |A intersect B| / |A union B|
+    :param a: Set
+    :param b: Set
+    :return: Float
+    """
 
-    :param A:
-    :param B:
-    :return:
-    '''
-    ### YOUR CODE HERE ###
+    ab_intersect = a.intersection(b)
+    ab_union = a.union(b)
 
-### YOUR CODE HERE ###
+    return len(ab_intersect)/ len(ab_union)
+
+
+one = {2, 5, 4, 3, 7, 8}
+two = {5, 34, 52, 84, 7, 8}
+three = {43, 54, 84, 2, 'Octopus'}
+four = {'Octopus', 'chicken', 'Kangaroo'}
+
+print(similarity(one, two))
+print(similarity(two, three))
+print(similarity(three, four))
+print(similarity(one, four))
 
 
 
