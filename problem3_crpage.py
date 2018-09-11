@@ -5,7 +5,10 @@
 # Date: <FILL ME IN>
 
 import urllib.request
+from os import path
 from string import punctuation
+import collections
+import operator
 
 
 def words_of_book():
@@ -41,8 +44,40 @@ def words_of_book():
     return list_words
 
 
+def read_file_by_word(file_path: str):
+
+    with open(file_path, 'r') as file_name:
+        list_words = file_name.read().split()
+
+    return list_words
+
+
+def use_cashed(file_path):
+
+    if path.exists(file_path):
+        list_words = read_file_by_word(file_path)
+        return list_words
+    else:
+        with open(file_path, 'w') as file:
+            for word in words_of_book():
+                file.write(word + ' ')
+        return words_of_book()
+
+
 def count_most_common(word_list):
-    ### YOUR CODE HERE ###
+    all_words = {}
+    for word in word_list:
+        if word not in all_words:
+            all_words[word] = 1
+        elif word in all_words:
+            all_words[word] += 1
+
+    sorted_word_count = sorted(list(all_words.items()), key=lambda x: x[1], reverse=True)
+
+    return sorted_word_count
 
 
-### YOUR CODE HERE ###
+word_list = use_cashed('tale_of_two_cities.txt')
+word_count = count_most_common(word_list)
+print(word_count[:100])
+# TODO BONUS: collections.counter(list)
