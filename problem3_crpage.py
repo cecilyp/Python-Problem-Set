@@ -1,8 +1,8 @@
 # STAT/CS 287
 # HW 01
 #
-# Name: <FILL ME IN>
-# Date: <FILL ME IN>
+# Name: Cecily Page
+# Date: September 11 2018
 
 import urllib.request
 from os import path
@@ -79,5 +79,9 @@ def count_most_common(word_list):
 
 word_list = use_cashed('tale_of_two_cities.txt')
 word_count = count_most_common(word_list)
-print(word_count[:100])
-# TODO BONUS: collections.counter(list)
+### 3.2
+most_used_words = word_count[:100]
+print(most_used_words)
+
+### 3 bonus
+print(collections.Counter(word_list))

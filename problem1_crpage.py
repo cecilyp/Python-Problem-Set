@@ -25,10 +25,12 @@ two = {5, 34, 52, 84, 7, 8}
 three = {43, 54, 84, 2, 'Octopus'}
 four = {'Octopus', 'chicken', 'Kangaroo'}
 
-print(similarity(one, two))
-print(similarity(two, three))
-print(similarity(three, four))
-print(similarity(one, four))
+print(one, two)
+print('similarity:', similarity(one, two))
+print(two, three)
+print('similarity:', similarity(two, three))
+print(three, four)
+print('similarity:', similarity(three, four))
 
 
 

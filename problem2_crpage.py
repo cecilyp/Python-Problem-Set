@@ -52,7 +52,7 @@ def run_stats(run: list):
 
 
 probabilities = [0.2, 0.4, 0.6, 0.8]
-all_flips = []
+all_flips = []  # all flips stored in this. first row = prob of probabilities[0] (0.2)
 
 for prob in probabilities:
     prob_flip = []
@@ -63,9 +63,9 @@ for prob in probabilities:
     all_flips.append(prob_flip)
 
 for i, flips in enumerate(all_flips):
-    print('This is the number of runs for probability of heads being ', probabilities[i])
+    # print('This is the number of runs for probability of heads being ', probabilities[i])
     runs = count_runs(flips)
-    print(run_stats(runs))
+    # print(run_stats(runs))
 
 # print(all_flips)
 # YOUR CODE HERE #
